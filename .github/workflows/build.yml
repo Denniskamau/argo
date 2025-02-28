@@ -5,10 +5,12 @@ on:
     workflows: ["Test"]
     types:
       - completed
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: ${{github.event.workflow_run.conclusion == 'success'}}
     steps:
       - name: Echo from Job 2
         run: echo "Job 2 is running after Job 1!"
