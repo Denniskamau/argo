@@ -1,0 +1,13 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo from Job 1
+        run: echo "Job 1 has completed!"
